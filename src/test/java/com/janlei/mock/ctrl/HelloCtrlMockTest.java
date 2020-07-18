@@ -2,6 +2,7 @@ package com.janlei.mock.ctrl;
 
 import com.janlei.ctrl.HelloCtrl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -25,8 +26,9 @@ public class HelloCtrlMockTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private HelloCtrl helloCtrlMock;
+//    @MockBean
+//    private HelloCtrl helloCtrlMock;
+
 
     @Test
     public void testNotNull() {
@@ -41,10 +43,10 @@ public class HelloCtrlMockTest {
                 .andExpect(MockMvcResultMatchers.content().string("Hello, spring"));
     }
 
-    @Test
-    public void test_mock() {
-        when(helloCtrlMock.hello("spring")).thenReturn("Hello, spring");
-        String rep = helloCtrlMock.hello("spring");
-        org.junit.jupiter.api.Assertions.assertEquals("Hello, spring", rep);
-    }
+//    @Test
+//    public void test_mock() {
+//        when(helloCtrlMock.hello("spring")).thenReturn("Hello, spring");
+//        String rep = helloCtrlMock.hello("spring");
+//        org.junit.jupiter.api.Assertions.assertEquals("Hello, spring", rep);
+//    }
 }

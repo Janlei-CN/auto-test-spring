@@ -1,6 +1,8 @@
 package com.janlei.ctrl;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,9 +22,14 @@ public class HelloCtrlTest {
 
     private String url = "http://127.0.0.1:";
 
+    @BeforeEach
+    void init(){
+        url = url + port;
+    }
+
     @Test
     void hello() {
-        String requestResult = this.restTemplate.getForObject(url + port + "/hello/spring",
+        String requestResult = this.restTemplate.getForObject(url + "/hello/spring",
                 String.class);
         Assertions.assertThat(requestResult).contains("Hello, spring");
     }
