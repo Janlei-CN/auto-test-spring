@@ -1,6 +1,6 @@
 package com.janlei.ctrl;
 
-import com.janlei.svs.IHelloSvc;
+import com.janlei.svc.IHelloSvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,6 +1,6 @@
-package com.janlei.svs.impl;
+package com.janlei.svc.impl;
 
-import com.janlei.svs.IHelloSvc;
+import com.janlei.svc.IHelloSvc;
 import org.springframework.stereotype.Service;
 
 @Service("IHelloSvc")
