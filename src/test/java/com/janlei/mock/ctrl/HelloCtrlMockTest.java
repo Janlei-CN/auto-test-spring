@@ -21,37 +21,37 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 @SpringBootTest
 @AutoConfigureMockMvc
 public class HelloCtrlMockTest {
-
-    @Autowired
-    private HelloCtrl helloCtrl;
+//
+//    @Autowired
+//    private HelloCtrl helloCtrl;
 
 
     @Autowired
     private MockMvc mockMvc;
 
-//    @MockBean
-//    private HelloCtrl helloCtrlMock;
+    @MockBean
+    private HelloCtrl helloCtrlMock;
 
-
-    @Test
-    public void testNotNull() {
-        Assertions.assertThat(helloCtrl).isNotNull();
-    }
-
-    @Test
-    public void testHello() throws Exception {
-        RequestBuilder request;
-        request = MockMvcRequestBuilders.get("/hello/spring");
-        this.mockMvc.perform(request)
-                .andDo(MockMvcResultHandlers.print())
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.content().string("Hello, spring"));
-    }
 
 //    @Test
-//    public void test_mock() {
-//        when(helloCtrlMock.hello("spring")).thenReturn("Hello, spring");
-//        String rep = helloCtrlMock.hello("spring");
-//        org.junit.jupiter.api.Assertions.assertEquals("Hello, spring", rep);
+//    public void testNotNull() {
+//        Assertions.assertThat(helloCtrl).isNotNull();
 //    }
+//
+//    @Test
+//    public void testHello() throws Exception {
+//        RequestBuilder request;
+//        request = MockMvcRequestBuilders.get("/hello/spring");
+//        this.mockMvc.perform(request)
+//                .andDo(MockMvcResultHandlers.print())
+//                .andExpect(MockMvcResultMatchers.status().isOk())
+//                .andExpect(MockMvcResultMatchers.content().string("Hello, spring"));
+//    }
+
+    @Test
+    public void test_mock() {
+        when(helloCtrlMock.hello("spring")).thenReturn("Hello, spring");
+        String rep = helloCtrlMock.hello("spring");
+        org.junit.jupiter.api.Assertions.assertEquals("Hello, spring", rep);
+    }
 }
