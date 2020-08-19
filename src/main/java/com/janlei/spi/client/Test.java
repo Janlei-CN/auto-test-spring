@@ -1,4 +1,4 @@
-package com.janlei.client;
+package com.janlei.spi.client;
 
 import com.janlei.spi.ISpiStu;
 
