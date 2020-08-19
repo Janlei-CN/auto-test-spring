@@ -15,5 +15,7 @@ public class Test {
         }
 
         log.info("test");
+
+        log.info("test github commit push");
     }
 }
